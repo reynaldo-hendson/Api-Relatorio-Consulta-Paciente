@@ -31,7 +31,9 @@ public class PacienteService {
         if(existeCpf){
             throw new NegocioException("Cpf já cadastrado.");
         }
-
+        if(repository.existsByEmail(paciente.getEmail())){
+            throw new NegocioException("Email já cadastrado.");
+        }
         return repository.save(paciente);
     }
 
