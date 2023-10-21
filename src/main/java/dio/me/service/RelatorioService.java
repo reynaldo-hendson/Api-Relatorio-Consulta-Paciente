@@ -1,4 +1,4 @@
-package dio.me.service.impl;
+package dio.me.service;
 
 
 import dio.me.domain.model.Paciente;

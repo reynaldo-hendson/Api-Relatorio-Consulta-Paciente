@@ -1,11 +1,11 @@
-package dio.me.service.impl;
+package dio.me.service;
 
 
 import dio.me.domain.model.Consulta;
 import dio.me.domain.model.Paciente;
 import dio.me.domain.repository.ConsultaRepository;
 import dio.me.exception.NegocioException;
-import dio.me.service.impl.mapper.ConsultaDto;
+import dio.me.controller.mapper.ConsultaDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

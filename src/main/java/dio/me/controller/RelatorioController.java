@@ -1,14 +1,12 @@
 package dio.me.controller;
 
 import dio.me.domain.model.Relatorio;
-import dio.me.service.impl.RelatorioService;
-import dio.me.service.impl.mapper.RelatorioDto;
+import dio.me.service.RelatorioService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

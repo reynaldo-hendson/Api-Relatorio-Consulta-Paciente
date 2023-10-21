@@ -2,8 +2,8 @@ package dio.me.controller;//package me.dio.controller;
 
 
 import dio.me.domain.model.Consulta;
-import dio.me.service.impl.mapper.ConsultaDto;
-import dio.me.service.impl.ConsultaService;
+import dio.me.controller.mapper.ConsultaDto;
+import dio.me.service.ConsultaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;

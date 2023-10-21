@@ -1,8 +1,8 @@
 package dio.me.controller;
 
 import dio.me.domain.model.Paciente;
-import dio.me.service.impl.mapper.PacienteDto;
-import dio.me.service.impl.PacienteService;
+import dio.me.controller.mapper.PacienteDto;
+import dio.me.service.PacienteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
