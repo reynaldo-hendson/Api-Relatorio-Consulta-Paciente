@@ -5,7 +5,7 @@ import dio.me.domain.model.Consulta;
 import dio.me.domain.model.Paciente;
 import dio.me.domain.repository.ConsultaRepository;
 import dio.me.exception.NegocioException;
-import dio.me.mapper.ConsultaDto;
+import dio.me.service.impl.mapper.ConsultaDto;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 

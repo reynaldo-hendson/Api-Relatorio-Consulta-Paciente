@@ -1,36 +1,31 @@
-package dio.me.mapper;
+package dio.me.service.impl.mapper;
 
-import dio.me.domain.model.Consulta;
 import dio.me.domain.model.Paciente;
+import dio.me.domain.model.Relatorio;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
 import java.time.LocalDateTime;
+
 @Getter
 @Setter
-public class ConsultaDto {
+public class RelatorioDto {
+
     private Long id;
 
-    private String descricao;
-
-    private LocalDateTime horario;
+    private LocalDateTime dataSessao;
 
     private LocalDateTime dataCriacao;
 
+    private String descricaoRelatorio;
+
     private Paciente paciente;
 
-    public ConsultaDto(Consulta entity) {
+    public RelatorioDto(Relatorio entity){
         BeanUtils.copyProperties(entity, this);
     }
 
 
 
 }
-
-
-
-
-
-
-
