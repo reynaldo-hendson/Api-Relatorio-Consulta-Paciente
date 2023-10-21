@@ -19,36 +19,41 @@ public class PacienteService {
     public final PacienteRepository repository;
 
     public Paciente salvar(Paciente paciente){
-        boolean existeCpf = false;
+        boolean existeCpf = repository.findByCpf(paciente.getCpf())
+                .stream()
+                .anyMatch(pacienteExistente -> !pacienteExistente.equals(paciente));;
 
-        Optional<Paciente> optionalPaciente = repository.findByCpf(paciente.getCpf());
-
-        if(optionalPaciente.isPresent()){
-            if(!optionalPaciente.get().getId().equals(paciente.getId())){
-                existeCpf = true;
-            }
-        }
         if(existeCpf){
             throw new NegocioException("Cpf já cadastrado.");
         }
-
+        if(repository.existsByEmail(paciente.getEmail())){
+            throw new NegocioException("Email já cadastrado.");
+        }
         return repository.save(paciente);
     }
 
     public Paciente alterar(Long id, Paciente paciente) {
         Optional<Paciente> optPaciente = this.buscarPorId(id);
 
-        if (optPaciente.isEmpty()) {
-            throw new NegocioException("Paciente não cadastrado!");
+        if(optPaciente.isPresent()) {
+            Paciente pacienteExistente = optPaciente.get();
+            pacienteExistente.setNome(paciente.getNome());
+            pacienteExistente.setSobrenome(paciente.getSobrenome());
+            pacienteExistente.setCpf(paciente.getCpf());
+            pacienteExistente.setEmail(paciente.getEmail());
+            pacienteExistente.setTelefone(paciente.getTelefone());
+
+            return repository.save(pacienteExistente);
+        }else{
+            throw new NegocioException("Paciente com ID: "+id+" não cadastrado!");
         }
 
-        paciente.setId(id);
+        //paciente.setId(id);
 
-        return salvar(paciente);
     }
 
     public List<Paciente> findAll(){
-        log.info("Buascando todos os pacientes.");
+        log.info("Buscando todos os pacientes.");
         return repository.findAll();
     }
 

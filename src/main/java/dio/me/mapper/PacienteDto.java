@@ -2,17 +2,15 @@ package dio.me.mapper;
 
 
 import dio.me.domain.model.Paciente;
-import jakarta.validation.constraints.NotBlank;
-
 
 
 public record PacienteDto(
-        @NotBlank Long id,
-        @NotBlank String nome,
-        @NotBlank String sobrenome,
-        @NotBlank String cpf,
-        @NotBlank String email,
-        @NotBlank String telefone) {
+         Long id,
+         String nome,
+         String sobrenome,
+         String cpf,
+         String email,
+         String telefone) {
 
     public PacienteDto(Paciente model) {
         this(

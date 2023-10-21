@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-@Table(name = "tb_agenda")
+@Table(name = "tb_consulta")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Consulta {
