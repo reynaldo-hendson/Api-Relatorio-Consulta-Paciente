@@ -40,13 +40,21 @@ public class PacienteService {
     public Paciente alterar(Long id, Paciente paciente) {
         Optional<Paciente> optPaciente = this.buscarPorId(id);
 
-        if (optPaciente.isEmpty()) {
-            throw new NegocioException("Paciente não cadastrado!");
+        if(optPaciente.isPresent()) {
+            Paciente pacienteExistente = optPaciente.get();
+            pacienteExistente.setNome(paciente.getNome());
+            pacienteExistente.setSobrenome(paciente.getSobrenome());
+            pacienteExistente.setCpf(paciente.getCpf());
+            pacienteExistente.setEmail(paciente.getEmail());
+            pacienteExistente.setTelefone(paciente.getTelefone());
+
+            return repository.save(pacienteExistente);
+        }else{
+            throw new NegocioException("Paciente com ID: "+id+" não cadastrado!");
         }
 
-        paciente.setId(id);
+        //paciente.setId(id);
 
-        return salvar(paciente);
     }
 
     public List<Paciente> findAll(){
