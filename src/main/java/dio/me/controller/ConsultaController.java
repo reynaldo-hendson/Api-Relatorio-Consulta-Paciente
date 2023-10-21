@@ -2,7 +2,7 @@ package dio.me.controller;//package me.dio.controller;
 
 
 import dio.me.domain.model.Consulta;
-import dio.me.mapper.ConsultaDto;
+import dio.me.service.impl.mapper.ConsultaDto;
 import dio.me.service.impl.ConsultaService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @RestController

@@ -1,4 +1,4 @@
-package dio.me.mapper;
+package dio.me.service.impl.mapper;
 
 
 import dio.me.domain.model.Paciente;
