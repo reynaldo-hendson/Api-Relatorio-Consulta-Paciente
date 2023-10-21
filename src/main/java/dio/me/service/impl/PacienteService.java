@@ -19,15 +19,10 @@ public class PacienteService {
     public final PacienteRepository repository;
 
     public Paciente salvar(Paciente paciente){
-        boolean existeCpf = false;
+        boolean existeCpf = repository.findByCpf(paciente.getCpf())
+                .stream()
+                .anyMatch(pacienteExistente -> !pacienteExistente.equals(paciente));;
 
-        Optional<Paciente> optionalPaciente = repository.findByCpf(paciente.getCpf());
-
-        if(optionalPaciente.isPresent()){
-            if(!optionalPaciente.get().getId().equals(paciente.getId())){
-                existeCpf = true;
-            }
-        }
         if(existeCpf){
             throw new NegocioException("Cpf já cadastrado.");
         }
@@ -58,7 +53,7 @@ public class PacienteService {
     }
 
     public List<Paciente> findAll(){
-        log.info("Buascando todos os pacientes.");
+        log.info("Buscando todos os pacientes.");
         return repository.findAll();
     }
 
