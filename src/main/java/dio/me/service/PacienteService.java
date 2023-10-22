@@ -48,8 +48,6 @@ public class PacienteService {
             throw new NegocioException("Paciente com ID: "+id+" não cadastrado!");
         }
 
-        //paciente.setId(id);
-
     }
 
     public List<Paciente> findAll(){
@@ -58,9 +56,15 @@ public class PacienteService {
     }
 
     public Optional<Paciente> buscarPorId(Long id){
-        log.info("buscarPorId: {}", id);
-        return repository.findById(id);
 
+        Optional<Paciente> optPaciente = repository.findById(id);
+
+        if(optPaciente.isPresent()) {
+            log.info("buscarPorId: {}", id);
+            return repository.findById(id);
+        }else{
+            throw new NegocioException("Paciente com ID: "+id+" não cadastrado!");
+        }
     }
 
     public void delete(Long id){
@@ -68,10 +72,5 @@ public class PacienteService {
         repository.deleteById(id);
 
     }
-
-//    public List<Paciente> buscarPorNome(String nome){
-//        log.info("buscarPorNome: {}", nome);
-//        return repository.findByNome(nome);
-//    }
 
 }
