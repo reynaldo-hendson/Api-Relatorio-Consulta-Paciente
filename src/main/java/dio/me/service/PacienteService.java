@@ -2,6 +2,7 @@ package dio.me.service;
 
 import dio.me.domain.model.Paciente;
 import dio.me.domain.repository.PacienteRepository;
+import dio.me.exception.EntidadeNaoEncontradaException;
 import dio.me.exception.NegocioException;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -45,7 +46,7 @@ public class PacienteService {
 
             return repository.save(pacienteExistente);
         }else{
-            throw new NegocioException("Paciente com ID: "+id+" não cadastrado!");
+            throw new EntidadeNaoEncontradaException("Paciente com ID: "+id+" não cadastrado!");
         }
 
     }
@@ -60,17 +61,23 @@ public class PacienteService {
         Optional<Paciente> optPaciente = repository.findById(id);
 
         if(optPaciente.isPresent()) {
-            log.info("buscarPorId: {}", id);
+            log.info("Buscando paciente com id: {}", id);
             return repository.findById(id);
         }else{
-            throw new NegocioException("Paciente com ID: "+id+" não cadastrado!");
+            throw new EntidadeNaoEncontradaException("Paciente com ID: "+id+" não encontrado.");
         }
     }
 
     public void delete(Long id){
         log.info("delete: {}", id);
-        repository.deleteById(id);
+        Optional<Paciente> optPaciente = repository.findById(id);
 
+        if(optPaciente.isPresent()) {
+            log.info("Buscando paciente com id: {}", id);
+            repository.deleteById(id);;
+        }else{
+            throw new EntidadeNaoEncontradaException("Paciente com ID: "+id+" não encontrado.");
+        }
     }
 
 }
