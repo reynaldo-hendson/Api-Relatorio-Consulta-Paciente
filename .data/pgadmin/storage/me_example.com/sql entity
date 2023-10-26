@@ -1,0 +1,8 @@
+create table tb_agenda (id bigserial not null, data_criacao timestamp(6), descricao varchar(255), data_hora timestamp(6), paciente_id bigint, primary key (id));
+create table tb_paciente (id bigserial not null, cpf varchar(11), email varchar(255), nome varchar(50), sobrenome varchar(50), telefone varchar(255), primary key (id));
+create table tb_relatorio (id bigserial not null, data_criacao timestamp(6), data_sessao timestamp(6), descricao_relatorio TEXT, paciente_id bigint, primary key (id));
+alter table if exists tb_paciente add constraint UK_6ad9be3a7jjmtjcos2y16mo08 unique (cpf);
+alter table if exists tb_paciente add constraint UK_s0br0snl91alxletgeh8m105r unique (email);
+alter table if exists tb_agenda add constraint FKak66mlp9knnbknxsql8l8b5e3 foreign key (paciente_id) references tb_paciente;
+alter table if exists tb_relatorio add constraint FKs5fvbg79oh4ml5t3lhfy5e5vx foreign key (paciente_id) references tb_paciente;
+

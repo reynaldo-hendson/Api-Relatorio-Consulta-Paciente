@@ -22,7 +22,7 @@ public class PacienteService {
     public Paciente salvar(Paciente paciente){
         boolean existeCpf = repository.findByCpf(paciente.getCpf())
                 .stream()
-                .anyMatch(pacienteExistente -> !pacienteExistente.equals(paciente));;
+                .anyMatch(pacienteExistente -> !pacienteExistente.equals(paciente));
 
         if(existeCpf){
             throw new NegocioException("Cpf já cadastrado.");
@@ -74,7 +74,7 @@ public class PacienteService {
 
         if(optPaciente.isPresent()) {
             log.info("Buscando paciente com id: {}", id);
-            repository.deleteById(id);;
+            repository.deleteById(id);
         }else{
             throw new EntidadeNaoEncontradaException("Paciente com ID: "+id+" não encontrado.");
         }
