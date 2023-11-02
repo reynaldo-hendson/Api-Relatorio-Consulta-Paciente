@@ -20,8 +20,7 @@ public class RelatorioRequest {
     private String descricaoRelatorio;
 
     @NotNull
-    //@DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm:ss")
-    @DateTimeFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-ddTHH:mm:ss")
     private LocalDateTime dataSessao;
 
     @NotNull
