@@ -20,6 +20,8 @@ public class PacienteService {
     public final PacienteRepository repository;
 
     public Paciente salvar(Paciente paciente){
+        paciente.setNome(paciente.getNome().toLowerCase());
+
         boolean existeCpf = repository.findByCpf(paciente.getCpf())
                 .stream()
                 .anyMatch(pacienteExistente -> !pacienteExistente.equals(paciente));
