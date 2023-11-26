@@ -55,7 +55,7 @@ classDiagram
 ![interface](https://github.com/reynaldo86/Dio-Api-Restful/assets/80369346/0144875d-c41c-4006-9a87-3c8971861fb9)
 
 ## Demonstração
-[Projeto](https://dio-api-restful-production.up.railway.app/swagger-ui/index.html)
+[Projeto](https://rhapi-restful-production.up.railway.app/swagger-ui.html)
 
 
 ## 💿Como Rodar este projeto
