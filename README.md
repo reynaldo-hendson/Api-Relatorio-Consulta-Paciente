@@ -42,7 +42,7 @@ classDiagram
   Consulta "1..1"<-->"1..1" Relatorio
 ```
 
-## 🖥️Funcionalidades do Projeto 
+<h2 id = "funcionalidades"> 🖥️Funcionalidades do Projeto </h2>
 - [x] Cadastro de Paciente
 - [x] Consulta de Paciente
 - [x] Exclusao do Paciente
