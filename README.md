@@ -11,7 +11,8 @@ Projeto API Restful elaborado para desafio de projeto Dio Santander Backend 2023
 - <a href="#autoras">Pessoas Autoras</a>
 - <a href="#Próximos passos">Próximos passos</a>
 
-<h3 id="diagrama">Diagrama de classes,</h3>
+<h2 id="diagrama">Diagrama de classes</h2>
+
 ```mermaid
 classDiagram
   class Paciente {
