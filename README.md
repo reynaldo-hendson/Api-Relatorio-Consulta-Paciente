@@ -43,6 +43,7 @@ classDiagram
 ```
 
 <h2 id = "funcionalidades"> 🖥️Funcionalidades do Projeto </h2>
+
 - [x] Cadastro de Paciente
 - [x] Consulta de Paciente
 - [x] Exclusao do Paciente
@@ -55,11 +56,13 @@ classDiagram
 ## 📺Layout
 ![interface](https://github.com/reynaldo86/Dio-Api-Restful/assets/80369346/0144875d-c41c-4006-9a87-3c8971861fb9)
 
-## Demonstração
+<h2 id="demonstracao" Demonstração </h2>
+
 [Projeto](https://rhapi-restful-production.up.railway.app/swagger-ui.html)
 
 
-## 💿Como Rodar este projeto
+<h2 id="rodar">💿Como Rodar este projeto</h2>
+
 ```bash
 # Clone o repositório 
 $ git clone https://github.com/reynaldo86/Dio-Api-Restful.git
@@ -79,18 +82,21 @@ Se o projeto usa um banco de dados, certifique-se de configurar as informações
 Consulte o arquivo application.properties (ou application.yml) para configurar outras propriedades da aplicação, como porta, URL da base de dados, é os ambientes.
 
 ```
-## 🛠️Tecnologias Utilizadas
+<h2 id="Tecnologias"🛠️Tecnologias Utilizadas</h2>
+
 1. [Java 17](https://www.java.com/pt-BR/)
 2. [Spring Boot 3](https://spring.io/projects/spring-boot)
 3. [OpenAPI (Swagger)](https://springdoc.org/)
 4. [Railway](https://railway.app/)
 
-## 👤Pessoas Autoras
+<h2 id="autoras"👤Pessoas Autoras</h2>
+
 <img src="https://media.licdn.com/dms/image/C4D03AQFM8O2ABfbPvQ/profile-displayphoto-shrink_200_200/0/1662041284290?e=1703721600&v=beta&t=JAqN8On0SSRgLiEgsUFo2hp9wv8UCzumg-4ft6sGVrk" alt="imagem do desenvolvedor"></img>
 
 [Linkedin](https://www.linkedin.com/in/reynaldo-hendson/)
 
-## 🖊️Próximos passos
+<h2 id="Próximos passos" 🖊️Próximos passos </h2>
+
 - [] Refartorar projeto
 - [] Implementar camada de segurança.
 - [] Conectar com Api externa de endereço
