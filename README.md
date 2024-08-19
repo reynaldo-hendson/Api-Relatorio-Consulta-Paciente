@@ -109,9 +109,8 @@ Consulte o arquivo application.properties (ou application.yml) para configurar o
 
 <h2 id="proximospassos"> 🖊️Próximos passos </h2>
 
-- [] Refartorar projeto
 - [] Implementar camada de segurança.
 - [] Conectar com Api externa de endereço
 - [] Implementar pagamentos
 - [] Implementar notificação via email 
-- [] Implementar Frontend
+
