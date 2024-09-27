@@ -1,6 +1,4 @@
-# Projeto Dio Santander Backend 2023
-
-Projeto API Restful para controle de consultas, Pacientes e Relatórios..
+#Projeto API Restful para controle de sessões, Pacientes e Relatórios.
 
 ## Índice
 - <a href="#diagrama">Diagrama de classe</a>
